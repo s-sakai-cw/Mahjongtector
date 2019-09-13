@@ -23,4 +23,5 @@ public enum Yaku {
     public String toString() {
         return super.toString();
     }
+
 }
