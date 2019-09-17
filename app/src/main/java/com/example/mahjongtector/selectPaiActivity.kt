@@ -31,7 +31,7 @@ class selectPaiActivity : AppCompatActivity() {
         aPaiButton3.setOnClickListener { onaPaiButtonTapped(it,2) }
         aPaiButton4.setOnClickListener { onaPaiButtonTapped(it,3) }
         aPaiButton5.setOnClickListener { onaPaiButtonTapped(it,4) }
-        aPaiButton6.setOnClickListener { onaPaiButtonTapped(it,4) }
+        aPaiButton6.setOnClickListener { onaPaiButtonTapped(it,34) }
         aPaiButton7.setOnClickListener { onaPaiButtonTapped(it,5) }
         aPaiButton8.setOnClickListener { onaPaiButtonTapped(it,6) }
         aPaiButton9.setOnClickListener { onaPaiButtonTapped(it,7) }
@@ -41,7 +41,7 @@ class selectPaiActivity : AppCompatActivity() {
         aPaiButton13.setOnClickListener { onaPaiButtonTapped(it,11) }
         aPaiButton14.setOnClickListener { onaPaiButtonTapped(it,12) }
         aPaiButton15.setOnClickListener { onaPaiButtonTapped(it,13) }
-        aPaiButton16.setOnClickListener { onaPaiButtonTapped(it,13) }
+        aPaiButton16.setOnClickListener { onaPaiButtonTapped(it,35) }
         aPaiButton17.setOnClickListener { onaPaiButtonTapped(it,14) }
         aPaiButton18.setOnClickListener { onaPaiButtonTapped(it,15) }
         aPaiButton19.setOnClickListener { onaPaiButtonTapped(it,16) }
@@ -51,7 +51,7 @@ class selectPaiActivity : AppCompatActivity() {
         aPaiButton23.setOnClickListener { onaPaiButtonTapped(it,20) }
         aPaiButton24.setOnClickListener { onaPaiButtonTapped(it,21) }
         aPaiButton25.setOnClickListener { onaPaiButtonTapped(it,22) }
-        aPaiButton26.setOnClickListener { onaPaiButtonTapped(it,22) }
+        aPaiButton26.setOnClickListener { onaPaiButtonTapped(it,36) }
         aPaiButton27.setOnClickListener { onaPaiButtonTapped(it,23) }
         aPaiButton28.setOnClickListener { onaPaiButtonTapped(it,24) }
         aPaiButton29.setOnClickListener { onaPaiButtonTapped(it,25) }

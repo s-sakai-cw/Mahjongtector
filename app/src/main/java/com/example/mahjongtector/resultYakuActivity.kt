@@ -162,8 +162,21 @@ class resultYakuActivity : AppCompatActivity() {
             //手牌
             var tiles = IntArray(34, { 0 } )
             for (tile in handlist){
-                tiles[tile] += 1
+                if(tile<34) {
+                    tiles[tile] += 1
+                }
+                else{
+                    when(tile){
+                        34 -> tiles[4] += 1
+                        35 -> tiles[13] += 1
+                        36 -> tiles[22] += 1
+
+
+                    }
+
+                }
             }
+
 
             //ボタン画像セット
             setPaiImage(handlist[0], paiButton1)
@@ -179,6 +192,8 @@ class resultYakuActivity : AppCompatActivity() {
             setPaiImage(handlist[10], paiButton11)
             setPaiImage(handlist[11], paiButton12)
             setPaiImage(handlist[12], paiButton13)
+
+            aimYaku(tiles)
 
 
         }
@@ -226,6 +241,11 @@ class resultYakuActivity : AppCompatActivity() {
             31 -> imageButton.setImageResource(R.drawable.haku)
             32 -> imageButton.setImageResource(R.drawable.hatu)
             33 -> imageButton.setImageResource(R.drawable.chun)
+
+            34 -> imageButton.setImageResource(R.drawable.m5r)
+            35 -> imageButton.setImageResource(R.drawable.p5r)
+            36 -> imageButton.setImageResource(R.drawable.s5r)
+
 
 
 
