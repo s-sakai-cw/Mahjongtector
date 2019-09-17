@@ -3,11 +3,63 @@ package com.example.mahjongtector;
 import androidx.annotation.NonNull;
 
 public enum Yaku {
-    Reach(0), Ippatu(1), Tumo(2), Pinhu(3), Tanyao(4), Ipeiko(5), Haku(6), Hatu(7), Tyun(8), Jikaze(9), Bakaze(10), Rinsyan(11), Tyankan(12), Haitei(13), Houtei(14), DoubleReach(15), Tyanta(16), Honroutou(17), SansyokuDoujun(18), Ittuu(19), ToiToi(20), SansyokuDoukou(21), Sanankou(22), Sankantu(23), Syousangen(24), Titoitu(25), Ryanpeikou(26), Juntyan(27), Honitu(28), Tinitu(29), Dora(30), Suankou(31), SuankouTanki(32), Daisangen(33), Tuisou(34), Syoususi(35), Daisusi(36), Ryuisou(37), Tyurenpoutou(38), JunseiTyurenpoutou(39), Tinroutou(40), Sukantu(41), Tenhou(42), Tihou(43), Kokusimusou(44), Kokusimusou13(45);
+    Reach(0, "リーチ", "リーチ"),
+    Ippatu(1, "一発", "一発"),
+    Tumo(2, "門前清模和", "門前清模和"),
+    Pinhu(3, "平和", "メンツが４つとも順子で、アタマが役牌でなく、両面待ちの時に成立"),
+    Tanyao(4, "断ヤオ", "２～８の数牌のみの場合に成立"),
+    Ipeiko(5, "一盃口", "同じ順子が２組ある場合に成立"),
+    Haku(6, "白", "「白」が３つ以上ある場合に成立"),
+    Hatu(7, "發", "「發」が３つ以上ある場合に成立"),
+    Tyun(8, "中", "「中」が３つ以上ある場合に成立"),
+    Jikaze(9, "門風牌", "自風（親なら東家なので「東」）が３つ以上ある場合に成立"),
+    Bakaze(10, "荘風牌", "場風（南場の「南」）が３つ以上ある場合に成立"),
+    Rinsyan(11, "嶺上開花", "嶺上開花"),
+    Tyankan(12, "槍槓", "槍槓"),
+    Haitei(13, "海底撈月", "海底撈月"),
+    Houtei(14, "河底撈魚", "河底撈魚"),
+    DoubleReach(15, "ダブルリーチ", "ダブルリーチ"),
+    Tyanta(16, "全帯", "４つのメンツとアタマすべてにヤオ九牌（1・9と字牌）が含まれている場合に成立"),
+    Honroutou(17, "混老頭", "すべての牌がヤオ九牌（1・9と字牌）だけの場合に成立"),
+    SansyokuDoujun(18, "三色同順", "３種類の色（万子・索子・筒子）それぞれに、同じ数字の並びの順子がある場合に成立"),
+    Ittuu(19, "一気通貫", "同種（同色）の数牌で、１２３、４５６、７８９、の順子がある場合に成立"),
+    ToiToi(20, "対々和", "４つのメンツすべてが刻子（槓子）の場合に成立"),
+    SansyokuDoukou(21, "三色同刻", "３種類の色（万子・索子・筒子）それぞれに、同じ数字の刻子（槓子）がある場合に成立"),
+    Sanankou(22, "三暗刻", "暗刻（暗槓）が３つある場合に成立"),
+    Sankantu(23, "三槓子", "槓子（暗刻・明刻いずれでも可）が３つある場合に成立"),
+    Syousangen(24, "小三元", "三元牌（白・發・中）のいずれか１つをアタマとし、残り２種類を刻子（槓子）とした場合に成立"),
+    Titoitu(25, "七対子", "対子が７組ある場合に成立．同牌が４枚ある場合には成立しない．"),
+    Ryanpeikou(26, "二盃口", "同じ順子が２組という組み合わせが２つある場合に成立"),
+    Juntyan(27, "純全帯", "４つのメンツとアタマすべてに老頭牌（１・９）が含まれる場合に成立"),
+    Honitu(28, "混一色", "万子、索子、筒子のどれか一種類の牌と、字牌だけの場合に成立"),
+    Tinitu(29, "清一色", "万子、索子、筒子のどれか一種類の牌だけの場合に成立"),
+    Dora(30, "ドラ", "上がった時に、手牌や鳴いた牌の中にドラが含まれると1枚につき1飜加算する．ドラ表示牌の次の牌がドラになる．（アガリ役ではないため、ドラだけでは上がることはできない．）"),
+    Suankou(31, "四暗刻", "暗刻（暗槓）が３つある場合に成立します．ロンの場合、アガリ牌を含む刻子は暗刻とみなされないことに注意が必要．"),
+    SuankouTanki(32, "四暗刻単騎待ち", "四暗刻のうち単騎待ちの場合に成立．ダブル役満"),
+    Daisangen(33, "大三元", "三元牌（白・發・中）の３種類すべてが刻子（槓子）である場合に成立"),
+    Tuisou(34, "字一色", "すべての牌が字牌である場合に成立"),
+    Syoususi(35, "小四喜", "風牌（東・南・西・北）のうち３種が刻子（槓子）で、残りの１種が雀頭である場合に成立"),
+    Daisusi(36, "大四喜", "風牌（東・南・西・北）の４種類すべてが刻子（槓子）である場合に成立．ダブル役満"),
+    Ryuisou(37, "緑一色", "索子の２３４６８と字牌の發のみである場合に成立"),
+    Tyurenpoutou(38, "九蓮宝燈", "万子、索子、筒子のどれか一種類の牌だけで、１１１２３４５６７８９９９の牌とさらに１枚１～９の牌を追加した牌形である場合に成立"),
+    JunseiTyurenpoutou(39, "純正九連宝燈", "九連宝燈のうち、聴牌時の牌形が１１１２３４５６７８９９９の牌であり、１～９の牌いずれでも上がれる場合（９面待ち）に成立．ダブル役満"),
+    Tinroutou(40, "清老頭", "すべての牌が老頭牌（１・９）だけである場合に成立"),
+    Sukantu(41, "四槓子", "槓子（暗槓・明槓いずれでも可）が４つある場合に成立．ダブル役満"),
+    Tenhou(42, "天和", "親の配牌の時点で既にアガリ形になっている場合に成立"),
+    Tihou(43, "地和", "子の最初のツモでツモアガリした場合に成立．そのツモの前にポン・チー・カン（暗カンを含む）が行われると無効"),
+    Kokusimusou(44, "国士無双", "13種類すべてのヤオ九牌（１・９と字牌）が最低１枚ずつあり、そのうちのどれか１種類が２枚ある場合に成立"),
+    Kokusimusou13(45, "国士無双十三面待ち", "国士無双のうち、聴牌時に13種類すべてのヤオ九牌が１枚ずつあり、ヤオ九牌ならどれでも上がれる場合（13面待ち）に成立．ダブル役満");
 
     private int code;
-    Yaku(int code) {
+    private String yakuName;
+    private String yakuExp;
+
+
+    Yaku(int code, String yakuName, String yakuExp) {
         this.code = code;
+        this.yakuName = yakuName;
+        this.yakuExp = yakuExp;
+
     }
 
     public static Yaku valueOf(int c) {
@@ -18,10 +70,17 @@ public enum Yaku {
         return code;
     }
 
+    public String getYakuName() {
+        return yakuName;
+    }
+
+    public String getYakuExp() {
+        return yakuExp;
+    }
+
     @NonNull
     @Override
     public String toString() {
         return super.toString();
     }
-
 }

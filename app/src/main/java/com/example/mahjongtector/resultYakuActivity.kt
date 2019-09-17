@@ -1,5 +1,6 @@
 package com.example.mahjongtector
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,12 +18,12 @@ class resultYakuActivity : AppCompatActivity() {
 
 
 //        0, 1, 2, 9, 10, 11, 18, 19, 20, 15, 15, 5, 6
-//            0, 1, 2, 3, 4, 5, 6, 7, 8, 20, 20, 22, 22
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 20, 20, 22, 22
 
-    //九蓮宝燈
+        //九蓮宝燈
 //    0,0,0,1,2,3,4,5,6,7,8,8,8
 
-        0,0,0,1,2,3,4,5,6,7,27,27,27
+//        0,0,0,1,2,3,4,5,6,7,27,27,27
 
     )
 
@@ -74,7 +75,7 @@ class resultYakuActivity : AppCompatActivity() {
         for (tile in handlist){
             tiles[tile] += 1
         }
-        
+
 
 
 
@@ -103,28 +104,89 @@ class resultYakuActivity : AppCompatActivity() {
 
 
         //ボタン押された時の処理
-        paiButton1.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton2.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton3.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton4.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton5.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton6.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton7.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton8.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton9.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton10.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton11.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton12.setOnClickListener { onPaiButtonTapped(it) }
-        paiButton13.setOnClickListener { onPaiButtonTapped(it) }
+        paiButton1.setOnClickListener { onPaiButtonTapped(it, 0) }
+        paiButton2.setOnClickListener { onPaiButtonTapped(it,1) }
+        paiButton3.setOnClickListener { onPaiButtonTapped(it,2) }
+        paiButton4.setOnClickListener { onPaiButtonTapped(it,3) }
+        paiButton5.setOnClickListener { onPaiButtonTapped(it,4) }
+        paiButton6.setOnClickListener { onPaiButtonTapped(it,5) }
+        paiButton7.setOnClickListener { onPaiButtonTapped(it,6) }
+        paiButton8.setOnClickListener { onPaiButtonTapped(it,7) }
+        paiButton9.setOnClickListener { onPaiButtonTapped(it,8) }
+        paiButton10.setOnClickListener { onPaiButtonTapped(it,9) }
+        paiButton11.setOnClickListener { onPaiButtonTapped(it,  10) }
+        paiButton12.setOnClickListener { onPaiButtonTapped(it,11) }
+        paiButton13.setOnClickListener { onPaiButtonTapped(it,12) }
     }
-    fun onPaiButtonTapped(view: View?){
+
+
+
+
+    fun onPaiButtonTapped(view: View?, pai: Int){
         //Intentのインスタンス作成　(元, 呼び出したいclass)
         val intent = Intent(this, selectPaiActivity::class.java)
-        //インテントにデータを追加　(名前, 値)　画像ボタンのidを渡している
-        intent.putExtra("MY_HAND", view?.id)
-        //アクティビティ起動
-        startActivity(intent)
+//        //インテントにデータを追加　(名前, 値)　画像ボタンのidを渡している
+//        intent.putExtra("myHand", view?.id)
+//        //アクティビティ起動
+//        startActivity(intent)
+        //handlistと変更牌番号を渡す
+        intent.putExtra("oldHandlist", handlist)
+        intent.putExtra("oldPai", pai)
+        val requestCode = 1000
+        startActivityForResult( intent, requestCode )
+
     }
+
+
+    //画面戻ってきたら
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+
+        super.onActivityResult(requestCode, resultCode, intent)
+//        super.onActivityResult(requestCode, 2000, intent)
+
+        if (resultCode == Activity.RESULT_OK &&
+            requestCode == 1000 && intent != null) {
+
+            val intent = getIntent()
+            handlist = intent.getIntArrayExtra("newHandlist")
+            handlist.set(1, 10)
+
+
+            //手牌
+            var tiles = IntArray(34, { 0 } )
+            for (tile in handlist){
+                tiles[tile] += 1
+            }
+
+
+
+
+            aimYaku(tiles)
+
+
+
+
+
+
+            //ボタン画像セット
+            setPaiImage(handlist[0], paiButton1)
+            setPaiImage(handlist[1], paiButton2)
+            setPaiImage(handlist[2], paiButton3)
+            setPaiImage(handlist[3], paiButton4)
+            setPaiImage(handlist[4], paiButton5)
+            setPaiImage(handlist[5], paiButton6)
+            setPaiImage(handlist[6], paiButton7)
+            setPaiImage(handlist[7], paiButton8)
+            setPaiImage(handlist[8], paiButton9)
+            setPaiImage(handlist[9], paiButton10)
+            setPaiImage(handlist[10], paiButton11)
+            setPaiImage(handlist[11], paiButton12)
+            setPaiImage(handlist[12], paiButton13)
+
+
+        }
+    }
+
 
     //ボタンに牌画像セット
     fun setPaiImage(pai: Int, imageButton: ImageButton){
@@ -181,9 +243,9 @@ class resultYakuActivity : AppCompatActivity() {
     //シャン点数
     fun getSyantenNum(tiles: IntArray) : Pair<Int, MutableList<Tile>> {
 
-        canWin.append("国士無双シャンテン数" + getKokusiSyantenNum(tiles).first.toString() + "不要牌"+getKokusiSyantenNum(tiles).second[0].toString() + "\n")
-        canWin.append("七対子シャンテン数" + getTiitoituSyantenNum(tiles).first.toString() + "\n")
-        canWin.append("普通のシャンテン数" + getNormalSyantenNum(tiles).first.toString() + "不要牌"+getNormalSyantenNum(tiles).second[0].toString() + "\n")
+        yaku1.append("国士無双シャンテン数" + getKokusiSyantenNum(tiles).first.toString() + "不要牌"+getKokusiSyantenNum(tiles).second[0].toString() + "\n")
+        yaku1.append("七対子シャンテン数" + getTiitoituSyantenNum(tiles).first.toString() + "\n")
+        yaku1.append("普通のシャンテン数" + getNormalSyantenNum(tiles).first.toString() + "不要牌"+getNormalSyantenNum(tiles).second[0].toString() + "\n")
 
         val syanten_min = kotlin.math.min(kotlin.math.min(getKokusiSyantenNum(tiles).first, getTiitoituSyantenNum(tiles).first), getNormalSyantenNum(tiles).first)
         if ((syanten_min == getKokusiSyantenNum(tiles).first)) {
@@ -299,7 +361,7 @@ class resultYakuActivity : AppCompatActivity() {
     //最終的な結果
 //メンツ抜き出しの関数//////////////////////////
     fun mentu_cut(tmp: IntArray, start: Int) {
-//        canWin.append("mentu " + mentu.toString() + "\n")
+//        yaku1.append("mentu " + mentu.toString() + "\n")
         var j = 0
         //牌が見つかるまで飛ばす
         for (k in start until 34) {
@@ -411,34 +473,30 @@ class resultYakuActivity : AppCompatActivity() {
         // 作業用変数
         var tmp = tiles.copyOf()
 //        var tmp = tiles みたいにするとtilesも変わってしまう
-        canWin.setText("aa")
-
-//        canWin.append("シャンテン数" + getSyantenNum(tmp).first.toString() + "\n")
-//        canWin.append("三色同順" + isSansyokuDoujun(tmp).toString() + "\n")
-//        canWin.append("平和 " + isPinhu(tmp).toString() + "\n")
-//        canWin.append("平和 " + isPinhu(tmp).toString() + "\n")
-//        canWin.append("一気通貫 " + isIttuu(tmp).toString() + "\n")
-//
-//        canWin.append("自風" + isJikaze(tmp).toString() + "\n")
+        yaku1.setText("成立している役\n")
+        yaku2.setText("狙える役\n")
 
 
 
-        canWin.append("国士無双シャンテン数" + getKokusiSyantenNum(tiles).first.toString() + "不要牌"+getKokusiSyantenNum(tiles).second[0].toString() + "\n")
-        canWin.append("七対子シャンテン数" + getTiitoituSyantenNum(tiles).first.toString() + "不要牌"+getTiitoituSyantenNum(tiles).second[0].toString() + "\n")
-        canWin.append("普通のシャンテン数" + getNormalSyantenNum(tiles).first.toString() + "\n")
+
+//        yaku1.append("国士無双シャンテン数" + getKokusiSyantenNum(tiles).first.toString() + "不要牌"+getKokusiSyantenNum(tiles).second[0].toString() + "\n")
+//        yaku1.append("七対子シャンテン数" + getTiitoituSyantenNum(tiles).first.toString() + "不要牌"+getTiitoituSyantenNum(tiles).second[0].toString() + "\n")
+//        yaku1.append("普通のシャンテン数" + getNormalSyantenNum(tiles).first.toString() + "\n")
+
 
 
 
         var yakuScoreList = doubleArrayOf(isReach(tmp), isIppatu(tmp), isTumo(tmp), isPinhu(tmp), isTanyao(tmp), isIpeiko(tmp), isHaku(tmp), isHatu(tmp), isChun(tmp), isJikaze(tmp), isBakaze(tmp), isRinsyan(tmp), isTyankan(tmp), isHaitei(tmp), isHoutei(tmp), isDoubleReach(tmp), isTyanta(tmp), isHonroutou(tmp), isSansyokuDoujun(tmp), isIttuu(tmp), isToiToi(tmp), isSansyokuDoukou(tmp), isSanankou(tmp), isSankantu(tmp), isSyousangen(tmp), isTitoitu(tmp), isRyanpeiko(tmp), isJuntyan(tmp), isHonitu(tmp), isTinitu(tmp), isDora(tmp), isSuankou(tmp), isSuankouTanki(tmp), isDaisangen(tmp), isTuiso(tmp), isSyoususi(tmp), isDaisusi(tmp), isRyuisou(tmp), isTyurenPoutou(tmp), isJunseiTyurenpoutou(tmp), isTinroutou(tmp), isSukantu(tmp), isTenhou(tmp), isTihou(tmp), isKokusi(tmp), isKokusi13(tmp))
         for (i in yakuScoreList.indices){
             when(yakuScoreList[i]){
-                1.0 -> canWin.append("成立: ${Yaku.valueOf(i)}\n")
-                0.66 -> canWin.append("狙える: ${Yaku.valueOf(i)}\n")
-                0.3 -> canWin.append("まあ狙える: ${Yaku.valueOf(i)}\n")
+                1.0 -> {
+                    yaku1.append("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                }
+
+                0.66 -> yaku2.append("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+//                0.33 -> yaku3.append("まあ狙える: ${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
             }
         }
-
-
     }
 //
 //    // 狙うべき役を判定するための関数テーブル
@@ -453,7 +511,7 @@ class resultYakuActivity : AppCompatActivity() {
     fun isPinhu(tmp: IntArray) : Double {
         // 作業用変数
         var tmpPin = tmp.copyOf()
-         // 0.33:
+        // 0.33:
         // 0.66: 頭があって，リャンメん二つ
         // 1.0: テンパイ
         var count = 0
@@ -516,7 +574,8 @@ class resultYakuActivity : AppCompatActivity() {
         when (count) {
             1 -> return 0.33
             2, 3, 4 -> return 0.66
-            5 -> return 1.0
+            5 -> return 0.66
+//            5 -> return 1.0
             else -> return 0.0
         }
     }
@@ -599,7 +658,7 @@ class resultYakuActivity : AppCompatActivity() {
     //白
     fun isHaku(tmp: IntArray) : Double {
         if (tmp[Tile.HAK.getCode()] == 2) {
-            return 0.33
+            return 0.66
         } else if (tmp[Tile.HAK.getCode()] == 3) {
             return 1.0
         }
@@ -609,7 +668,7 @@ class resultYakuActivity : AppCompatActivity() {
     //發
     fun isHatu(tmp: IntArray) : Double {
         if (tmp[Tile.HAT.getCode()] == 2) {
-            return 0.33
+            return 0.66
         } else if (tmp[Tile.HAT.getCode()] == 3) {
             return 1.0
         }
@@ -619,7 +678,7 @@ class resultYakuActivity : AppCompatActivity() {
     //中
     fun isChun(tmp: IntArray) : Double {
         if (tmp[Tile.CHN.getCode()] == 2) {
-            return 0.33
+            return 0.66
         } else if (tmp[Tile.CHN.getCode()] == 3) {
             return 1.0
         }
@@ -633,7 +692,7 @@ class resultYakuActivity : AppCompatActivity() {
     //自風
     fun isJikaze(tmp: IntArray) : Double {
         if (tmp[jikaze.getCode()] == 2) {
-            return 0.33
+            return 0.66
         } else if (tmp[jikaze.getCode()] == 3) {
             return 1.0
         }
@@ -643,7 +702,7 @@ class resultYakuActivity : AppCompatActivity() {
     //場風
     fun isBakaze(tmp: IntArray) : Double {
         if (tmp[bakaze.getCode()] == 2) {
-            return 0.33
+            return 0.66
         } else if (tmp[bakaze.getCode()] == 3) {
             return 1.0
         }
@@ -687,7 +746,7 @@ class resultYakuActivity : AppCompatActivity() {
         }
         return 0.0
     }
-    
+
     //三色同順
     fun isSansyokuDoujun(tmp: IntArray) : Double {
         var kazu = IntArray(7, { 0 } )
@@ -717,7 +776,7 @@ class resultYakuActivity : AppCompatActivity() {
         }
         return 0.0
     }
-    
+
     //一通
     fun isIttuu(tmp: IntArray) : Double {
         var count = 0
@@ -756,7 +815,7 @@ class resultYakuActivity : AppCompatActivity() {
             8 -> score += 0.66
             9 -> score += 1.0
         }
-        
+
         return score
     }
 
@@ -902,9 +961,9 @@ class resultYakuActivity : AppCompatActivity() {
         var max = 0
         var count = 0
         for (i in 0 .. 8) {
-                if (tmp[i] > 0) {
-                    count += tmp[i]
-                }
+            if (tmp[i] > 0) {
+                count += tmp[i]
+            }
             if (count > max) {
                 max = count
             }
