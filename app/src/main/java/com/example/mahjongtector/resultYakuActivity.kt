@@ -27,13 +27,16 @@ class resultYakuActivity : AppCompatActivity() {
 
     )
 
-    private val spinnerItems = arrayOf("Spinner", "Android", "Apple", "Windows")
+
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result_yaku)
+
+
+
 
 //        var bakaze : String
 //
@@ -64,6 +67,8 @@ class resultYakuActivity : AppCompatActivity() {
 //                //
 //            }
 //        }
+
+
 
 
 
@@ -147,9 +152,11 @@ class resultYakuActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK &&
             requestCode == 1000 && intent != null) {
 
-            val intent = getIntent()
+
+
+
+//            val intent = getIntent()
             handlist = intent.getIntArrayExtra("newHandlist")
-            handlist.set(1, 10)
 
 
             //手牌
@@ -157,16 +164,6 @@ class resultYakuActivity : AppCompatActivity() {
             for (tile in handlist){
                 tiles[tile] += 1
             }
-
-
-
-
-            aimYaku(tiles)
-
-
-
-
-
 
             //ボタン画像セット
             setPaiImage(handlist[0], paiButton1)

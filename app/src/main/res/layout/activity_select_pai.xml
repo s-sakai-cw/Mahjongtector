@@ -6,4 +6,443 @@
     android:layout_height="match_parent"
     tools:context=".selectPaiActivity">
 
+    <ImageButton
+        android:id="@+id/aPaiButton21"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton22"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton22"
+        app:srcCompat="@drawable/s1" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton34"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton35"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton33"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton33"
+        app:srcCompat="@drawable/pe" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton26"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton27"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton25"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton27"
+        app:srcCompat="@drawable/s5r" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton31"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="64dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton32"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/aPaiButton21"
+        app:srcCompat="@drawable/ton" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton22"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton23"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton21"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton23"
+        app:srcCompat="@drawable/s2" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton35"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton36"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton34"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton34"
+        app:srcCompat="@drawable/haku" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton37"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="64dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton36"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton36"
+        app:srcCompat="@drawable/chun" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton32"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton33"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton31"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton31"
+        app:srcCompat="@drawable/nan" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton25"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton26"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton24"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton26"
+        app:srcCompat="@drawable/s5" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton23"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton24"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton22"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton24"
+        app:srcCompat="@drawable/s3" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton24"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton25"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton23"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton25"
+        app:srcCompat="@drawable/s4" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton28"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton29"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton27"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton29"
+        app:srcCompat="@drawable/s7" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton29"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton30"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton28"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton30"
+        app:srcCompat="@drawable/s8" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton36"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton37"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton35"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton35"
+        app:srcCompat="@drawable/hatu" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton30"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton29"
+        app:layout_constraintTop_toBottomOf="@+id/aPaiButton20"
+        app:srcCompat="@drawable/s9" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton33"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton34"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton32"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton32"
+        app:srcCompat="@drawable/sha" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton27"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton28"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton26"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton28"
+        app:srcCompat="@drawable/s6" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton20"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton19"
+        app:layout_constraintTop_toBottomOf="@+id/aPaiButton10"
+        app:srcCompat="@drawable/p9" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton11"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton12"
+        app:srcCompat="@drawable/p1" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton14"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton15"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton13"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton15"
+        app:srcCompat="@drawable/p4" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton12"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton13"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton11"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton13"
+        app:srcCompat="@drawable/p2" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton15"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton16"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton14"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton16"
+        app:srcCompat="@drawable/p5" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton16"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton17"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton15"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton17"
+        app:srcCompat="@drawable/p5r" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton17"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton18"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton16"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton18"
+        app:srcCompat="@drawable/p6" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton18"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton19"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton17"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton19"
+        app:srcCompat="@drawable/p7" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton19"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton20"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton18"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton20"
+        app:srcCompat="@drawable/p8" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton13"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton14"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton12"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton14"
+        app:srcCompat="@drawable/p3" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton2"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton3"
+        app:srcCompat="@drawable/m2" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton2"
+        app:srcCompat="@drawable/m1" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton4"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton3"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton5"
+        app:srcCompat="@drawable/m4" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton5"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton4"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton6"
+        app:srcCompat="@drawable/m5" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton6"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton5"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton7"
+        app:srcCompat="@drawable/m5r" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton7"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton6"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton8"
+        app:srcCompat="@drawable/m6" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton8"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton7"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton9"
+        app:srcCompat="@drawable/m7" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton9"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton8"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton10"
+        app:srcCompat="@drawable/m8" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton10"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton9"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:srcCompat="@drawable/m9" />
+
+    <ImageButton
+        android:id="@+id/aPaiButton3"
+        android:layout_width="53dp"
+        android:layout_height="69dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/aPaiButton4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aPaiButton2"
+        app:layout_constraintTop_toTopOf="@+id/aPaiButton4"
+        app:srcCompat="@drawable/m3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="25dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="30dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
