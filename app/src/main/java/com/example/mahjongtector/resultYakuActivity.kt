@@ -504,13 +504,29 @@ class resultYakuActivity : AppCompatActivity() {
 
 
         var yakuScoreList = doubleArrayOf(isReach(tmp), isIppatu(tmp), isTumo(tmp), isPinhu(tmp), isTanyao(tmp), isIpeiko(tmp), isHaku(tmp), isHatu(tmp), isChun(tmp), isJikaze(tmp), isBakaze(tmp), isRinsyan(tmp), isTyankan(tmp), isHaitei(tmp), isHoutei(tmp), isDoubleReach(tmp), isTyanta(tmp), isHonroutou(tmp), isSansyokuDoujun(tmp), isIttuu(tmp), isToiToi(tmp), isSansyokuDoukou(tmp), isSanankou(tmp), isSankantu(tmp), isSyousangen(tmp), isTitoitu(tmp), isRyanpeiko(tmp), isJuntyan(tmp), isHonitu(tmp), isTinitu(tmp), isDora(tmp), isSuankou(tmp), isSuankouTanki(tmp), isDaisangen(tmp), isTuiso(tmp), isSyoususi(tmp), isDaisusi(tmp), isRyuisou(tmp), isTyurenPoutou(tmp), isJunseiTyurenpoutou(tmp), isTinroutou(tmp), isSukantu(tmp), isTenhou(tmp), isTihou(tmp), isKokusi(tmp), isKokusi13(tmp))
+        var countEst = 0
+        var countAim = 0
         for (i in yakuScoreList.indices){
             when(yakuScoreList[i]){
                 1.0 -> {
-                    yaku1.append("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                    if (countEst == 0){
+                        yaku1Name.setText("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                        countEst += 1
+                    }
+                    else {
+                        yaku1Name.append("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                    }
                 }
 
-                0.66 -> yaku2.append("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                0.66 -> {
+                    if (countAim == 0){
+                        yaku2Name.setText("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                        countAim += 1
+                    }
+                    else {
+                        yaku2Name.append("${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
+                    }
+                }
 //                0.33 -> yaku3.append("まあ狙える: ${Yaku.valueOf(i).yakuName}\n    ${Yaku.valueOf(i).yakuExp}\n")
             }
         }
