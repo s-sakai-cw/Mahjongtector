@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -70,10 +72,45 @@ class MainActivity : AppCompatActivity() {
             }
 
             imageView!!.setImageBitmap(bitmap)
-            AsyncHttpRequest(this).execute(bitmap)
 
+            //リサイズ（縮小）　大きいと処理できなかったため
+            val bmpRsz = resizedBitmap(bitmap)
 
+            // SSDに入力するため正方形に拡張
+            val bmpSquared = createSquaredBitmap(bmpRsz)
+            AsyncHttpRequest(this).execute(bmpSquared)
         }
+    }
+
+    // Bitmapリサイズメソッド
+    private fun resizedBitmap(srcBmp: Bitmap): Bitmap {
+        val width = srcBmp.width
+        val height = srcBmp.height
+        val widthResized = 800
+        val heightResized = widthResized * height / width
+
+        val rszBmp: Bitmap
+        rszBmp = Bitmap.createScaledBitmap(srcBmp, widthResized, heightResized, false)
+
+        return rszBmp
+
+    }
+
+    // Bitmap正方形に拡張メソッド
+    private fun createSquaredBitmap(srcBmp: Bitmap): Bitmap {
+        val dim = Math.max(srcBmp.width, srcBmp.height)
+        val dstBmp = Bitmap.createBitmap(dim, dim, Bitmap.Config.ARGB_8888)
+
+        val canvas = Canvas(dstBmp)
+        canvas.drawColor(Color.WHITE)
+        canvas.drawBitmap(
+            srcBmp,
+            ((dim - srcBmp.width) / 2).toFloat(),
+            ((dim - srcBmp.height) / 2).toFloat(),
+            null
+        )
+
+        return dstBmp
     }
 
 
