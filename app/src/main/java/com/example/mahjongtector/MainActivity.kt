@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
     var textView: TextView? = null
     var editText: EditText? = null
 
-    var url = "http://127.0.0.1:8887/pass_check.html"
-
     val RESULT_CAMERA = 1001
     var imageView:ImageView? = null
 
@@ -35,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //ダミーカメラボタン　役表示画面へ遷移
         cameraButton.setOnClickListener {
             val intent = Intent(this, resultYakuActivity::class.java)
             startActivity(intent)
@@ -42,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.image_view)
 
+        //カメラ起動
         val cameraButton: Button = findViewById(R.id.camera_button)
         cameraButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
@@ -70,6 +70,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             imageView!!.setImageBitmap(bitmap)
+            AsyncHttpRequest(this).execute(bitmap)
+
+
         }
     }
 
