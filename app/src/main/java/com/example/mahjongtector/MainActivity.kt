@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -35,16 +36,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //ダミーカメラボタン　役表示画面へ遷移
-        cameraButton.setOnClickListener {
-            val intent = Intent(this, resultYakuActivity::class.java)
-            startActivity(intent)
-        }
 
-        imageView = findViewById(R.id.image_view)
 
         //カメラ起動
-        val cameraButton: Button = findViewById(R.id.camera_button)
+//        val cameraButton: Button = findViewById(R.id.camera_button)
         cameraButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -71,14 +66,71 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            imageView!!.setImageBitmap(bitmap)
+            //sample画像
+//            val bmp = BitmapFactory.decodeResource(resources, R.drawable.tehaisample)
+
+            //カメラで撮った画像
+            val bmp = bitmap
+
 
             //リサイズ（縮小）　大きいと処理できなかったため
-            val bmpRsz = resizedBitmap(bitmap)
+            val bmpRsz = resizedBitmap(bmp)
 
             // SSDに入力するため正方形に拡張
             val bmpSquared = createSquaredBitmap(bmpRsz)
-            AsyncHttpRequest(this).execute(bmpSquared)
+
+//            imageView!!.setImageBitmap(bmp)
+
+            textview.setText("麻雀牌認識中...")
+
+            // リクエスト
+            val task = AsyncHttpRequest(this)
+            task.execute(bmpSquared)
+
+
+            //コールバック時
+            task.setOnCallBack(object : AsyncHttpRequest.CallBackTask() {
+
+                override fun CallBack(result: String) {
+                    super.CallBack(result)
+                    // ※１
+                    // resultにはdoInBackgroundの返り値が入ります。
+                    // ここからAsyncTask処理後の処理を記述します。
+                    Log.i("AsyncTaskCallback", "非同期処理が終了しました。")
+
+                    // Asyncから受け取った値を表示
+//                    val tv = findViewById(R.id.textview) as TextView
+
+
+
+
+                    //コンマ区切りで配列に
+                    val resultArr =
+                        result.split(", ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    //Int配列に
+                    val tehai = IntArray(resultArr.size)
+                    for (i in resultArr.indices) {
+                        tehai[i] = Integer.parseInt(resultArr[i]) // throws NumberFormatException
+                    }
+
+                    //Intentのインスタンス作成　(元, 呼び出したいclass)
+                    val intent = Intent(applicationContext, resultYakuActivity::class.java)
+                    //handlistと変更牌番号を渡す
+                    intent.putExtra("tehaiPicture", tehai)
+                    val requestCode = 1000
+                    startActivityForResult(intent, requestCode)
+
+
+                    //                tv.setText(String.valueOf(tehai[1]));
+
+                }
+
+            })
+
+
+
+
+
         }
     }
 

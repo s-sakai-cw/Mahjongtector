@@ -35,6 +35,10 @@ class resultYakuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result_yaku)
 
+        val intent = intent
+        handlist = intent.getIntArrayExtra("tehaiPicture")
+
+
 
 
 
@@ -76,7 +80,7 @@ class resultYakuActivity : AppCompatActivity() {
 
 
         //手牌
-        var tiles = IntArray(34, { 0 } )
+        var tiles = IntArray(37, { 0 } )
         for (tile in handlist){
             tiles[tile] += 1
         }
