@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Mahjongtector</string>
     <string name="description">photo</string>
-    <string name="button">Button</string>
+    <string name="sort">並び替え</string>
 
 </resources>

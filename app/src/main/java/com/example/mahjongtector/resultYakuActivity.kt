@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_result_yaku.*
 import java.text.FieldPosition
+import java.util.*
 import java.util.Collections.min
 
 
@@ -80,9 +81,21 @@ class resultYakuActivity : AppCompatActivity() {
 
 
         //手牌
-        var tiles = IntArray(37, { 0 } )
+        var tiles = IntArray(34, { 0 } )
         for (tile in handlist){
-            tiles[tile] += 1
+            if(tile<34) {
+                tiles[tile] += 1
+            }
+            else{
+                when(tile){
+                    34 -> tiles[4] += 1
+                    35 -> tiles[13] += 1
+                    36 -> tiles[22] += 1
+
+
+                }
+
+            }
         }
 
 
@@ -126,6 +139,26 @@ class resultYakuActivity : AppCompatActivity() {
         paiButton11.setOnClickListener { onPaiButtonTapped(it,  10) }
         paiButton12.setOnClickListener { onPaiButtonTapped(it,11) }
         paiButton13.setOnClickListener { onPaiButtonTapped(it,12) }
+
+
+        //並べ替えボタン
+        sortButton.setOnClickListener {
+            Arrays.sort(handlist);
+            //ボタン画像セット
+            setPaiImage(handlist[0], paiButton1)
+            setPaiImage(handlist[1], paiButton2)
+            setPaiImage(handlist[2], paiButton3)
+            setPaiImage(handlist[3], paiButton4)
+            setPaiImage(handlist[4], paiButton5)
+            setPaiImage(handlist[5], paiButton6)
+            setPaiImage(handlist[6], paiButton7)
+            setPaiImage(handlist[7], paiButton8)
+            setPaiImage(handlist[8], paiButton9)
+            setPaiImage(handlist[9], paiButton10)
+            setPaiImage(handlist[10], paiButton11)
+            setPaiImage(handlist[11], paiButton12)
+            setPaiImage(handlist[12], paiButton13)
+        }
     }
 
 
