@@ -16,16 +16,7 @@ class resultYakuActivity : AppCompatActivity() {
 
     //14の手牌
     var handlist = intArrayOf(
-
-
-//        0, 1, 2, 9, 10, 11, 18, 19, 20, 15, 15, 5, 6
             0, 1, 2, 3, 4, 5, 6, 7, 8, 20, 20, 22, 22
-
-        //九蓮宝燈
-//    0,0,0,1,2,3,4,5,6,7,8,8,8
-
-//        0,0,0,1,2,3,4,5,6,7,27,27,27
-
     )
 
 
@@ -44,34 +35,34 @@ class resultYakuActivity : AppCompatActivity() {
 
 
 //        var bakaze : String
-//
-//        val adapter = ArrayAdapter(applicationContext,
-//            android.R.layout.simple_spinner_item, spinnerItems)
-//
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//
-//        // spinner に adapter をセット
-//        // Kotlin Android Extensions
-//        spinner.adapter = adapter
-//
-//        // リスナーを登録
-//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            //　アイテムが選択された時
-//            override fun onItemSelected(
-//                parent: AdapterView<*>?,
-//                view: View?, position: Int, id: Long
-//            ) {
-//                val spinnerParent = parent as Spinner
-//                val item = spinnerParent.selectedItem as String
-//                // Kotlin Android Extensions
-//                textView2.text = item
-//            }
-//
-//            //　アイテムが選択されなかった
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                //
-//            }
-//        }
+////
+////        val adapter = ArrayAdapter(applicationContext,
+////            android.R.layout.simple_spinner_item, spinnerItems)
+////
+////        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+////
+////        // spinner に adapter をセット
+////        // Kotlin Android Extensions
+////        spinner.adapter = adapter
+////
+////        // リスナーを登録
+////        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+////            //　アイテムが選択された時
+////            override fun onItemSelected(
+////                parent: AdapterView<*>?,
+////                view: View?, position: Int, id: Long
+////            ) {
+////                val spinnerParent = parent as Spinner
+////                val item = spinnerParent.selectedItem as String
+////                // Kotlin Android Extensions
+////                textView2.text = item
+////            }
+////
+////            //　アイテムが選択されなかった
+////            override fun onNothingSelected(parent: AdapterView<*>?) {
+////                //
+////            }
+////        }
 
 
 
@@ -136,7 +127,7 @@ class resultYakuActivity : AppCompatActivity() {
         paiButton8.setOnClickListener { onPaiButtonTapped(it,7) }
         paiButton9.setOnClickListener { onPaiButtonTapped(it,8) }
         paiButton10.setOnClickListener { onPaiButtonTapped(it,9) }
-        paiButton11.setOnClickListener { onPaiButtonTapped(it,  10) }
+        paiButton11.setOnClickListener { onPaiButtonTapped(it,10) }
         paiButton12.setOnClickListener { onPaiButtonTapped(it,11) }
         paiButton13.setOnClickListener { onPaiButtonTapped(it,12) }
 
@@ -167,10 +158,6 @@ class resultYakuActivity : AppCompatActivity() {
     fun onPaiButtonTapped(view: View?, pai: Int){
         //Intentのインスタンス作成　(元, 呼び出したいclass)
         val intent = Intent(this, selectPaiActivity::class.java)
-//        //インテントにデータを追加　(名前, 値)　画像ボタンのidを渡している
-//        intent.putExtra("myHand", view?.id)
-//        //アクティビティ起動
-//        startActivity(intent)
         //handlistと変更牌番号を渡す
         intent.putExtra("oldHandlist", handlist)
         intent.putExtra("oldPai", pai)

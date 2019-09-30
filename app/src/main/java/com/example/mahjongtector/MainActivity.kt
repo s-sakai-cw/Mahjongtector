@@ -1,36 +1,21 @@
 package com.example.mahjongtector
 
-import android.Manifest
-import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-
-import android.net.Uri;
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View;
 import android.widget.*
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
 
-
-    var task: UploadTask? = null
-    var textView: TextView? = null
-    var editText: EditText? = null
-
     val RESULT_CAMERA = 1001
-    var imageView:ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
 
         //カメラ起動
-//        val cameraButton: Button = findViewById(R.id.camera_button)
         cameraButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -78,8 +62,6 @@ class MainActivity : AppCompatActivity() {
 
             // SSDに入力するため正方形に拡張
             val bmpSquared = createSquaredBitmap(bmpRsz)
-
-//            imageView!!.setImageBitmap(bmp)
 
             textview.setText("麻雀牌認識中...")
 
